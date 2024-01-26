@@ -54,7 +54,7 @@ app.post('/create_blog', async (req, res) => {
       const filename = `${uniqueFilename}.${fileExtension}`;
 
       // Upload image to Vercel Blob
-      const { url } = await put(`images/${filename}`, imageData, { access: 'public', token: process.env.VERCEL });
+      const { url } = await put(`images/${filename}`, imageData, { access: 'public', token: 'vercel_blob_rw_NgrGG8tCC2cJ4avM_ZowcgWa43otHe4OfPAoZNg9I4RFYnr' });
 
       imageUrl = url; // Set the imageUrl if image data is provided
     }
@@ -138,7 +138,7 @@ app.put('/update_blog/:id', async (req, res) => {
     const filename = `${uniqueFilename}.${fileExtension}`;
 
     // Upload the image to Vercel Blob storage
-    const { url } = await put(`images/${filename}`, imageData, { access: 'public', token: process.env.VERCEL });
+    const { url } = await put(`images/${filename}`, imageData, { access: 'public', token: 'vercel_blob_rw_NgrGG8tCC2cJ4avM_ZowcgWa43otHe4OfPAoZNg9I4RFYnr' });
       // Update the image URL in the updateData
       updateData.image = url;
     }
